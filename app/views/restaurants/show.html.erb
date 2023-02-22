@@ -4,4 +4,19 @@
   <p>Find me in <%= @restaurant.address %></p>
   <hr>
   <p>I'm a <em><%= @restaurant.category %></em> restaurant 🤌</p>
+  <hr>
+  <h2>What people say about me:</h2>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.content %>
+        <%= "🐶" * review.rating%>
+      </li>
+    <% end %>
+  </ul>
+  <hr>
+  <h2>Leave a review</h2>
+  <%= link_to new_restaurant_review_path(@restaurant)  do %>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  <% end %>
 </div>
