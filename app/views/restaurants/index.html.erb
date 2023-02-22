@@ -1,5 +1,11 @@
 <div class="container">
-  <h1>Restaurants</h1>
+  <div class="small-container" style="display:flex;">
+    <h1>Restaurants</h1>
+    <%= link_to new_restaurant_path,  style:"padding-left:15px; align-self: center;" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
+    <hr>
+  </div>
   <% @restaurants.each do |restaurant| %>
     <ul>
       <li>
